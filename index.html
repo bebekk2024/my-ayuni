@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildan ❤️ Ayuni</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+.section {
+    display:none;
+    padding:30px;
+    min-height:100vh;
+}
+
+.active {
+    display:block;
+}
+
+button {
+    padding:12px 20px;
+    border:none;
+    border-radius:25px;
+    background:white;
+    color:#ff4b5c;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.2);
+    margin: 15px auto;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* LOVE FALL */
+.heart {
+    position:fixed;
+    top:-10px;
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    to {transform: translateY(100vh);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<div class="section active" id="open">
+    <h1>💖 Hai Ayuni 💖</h1>
+    <p>Aku punya sesuatu buat kamu...</p>
+    <button onclick="next('larangan')">Buka 💌</button>
+</div>
+
+<!-- LARANGAN -->
+<div class="section" id="larangan">
+    <h2>💌 Untuk Kamu</h2>
+
+    <div class="card">Jangan terlalu lama marah ya… aku kangen senyummu 😊</div>
+    <div class="card">Kalau capek, istirahat ya… aku peduli sama kamu 😔</div>
+    <div class="card">Kalau sedih, cerita ke aku ya 🤍</div>
+    <div class="card">Jaga diri kamu baik-baik ❤️</div>
+    <div class="card">Jangan ngerasa sendirian… aku selalu ada 🤗</div>
+    <div class="card">Jangan lupa makan 😠</div>
+    <div class="card">Kalau ragu… ingat aku selalu milih kamu 💕</div>
+
+    <button onclick="next('alasan')">Lanjut ➡️</button>
+</div>
+
+<!-- ALASAN SAYANG -->
+<div class="section" id="alasan">
+    <h2>💖 Kenapa Aku Sayang Kamu</h2>
+
+    <div class="card">Karena kamu selalu bikin aku bahagia 😊</div>
+    <div class="card">Karena kamu itu unik dan beda ❤️</div>
+    <div class="card">Karena kamu sabar banget sama aku 😭</div>
+    <div class="card">Karena kamu selalu ada buat aku 🤍</div>
+    <div class="card">Karena kamu adalah rumah buat aku 🏡</div>
+
+    <button onclick="next('ending')">Terakhir 💌</button>
+</div>
+
+<!-- ENDING -->
+<div class="section" id="ending">
+    <h2>💔 Dari Hati Aku</h2>
+
+    <p style="max-width:400px;margin:auto;line-height:1.6;">
+    Aku mungkin bukan yang terbaik…  
+    aku juga sering salah…  
+    <br><br>
+    Tapi aku selalu berusaha buat kamu.  
+    <br><br>
+    Aku nggak janji hubungan kita bakal selalu mudah…  
+    tapi aku janji aku nggak akan ninggalin kamu.  
+    <br><br>
+    Selama kamu masih mau sama aku…  
+    aku akan tetap di sini.  
+    <br><br>
+    Karena kamu bukan cuma orang yang aku sayang…  
+    tapi kamu adalah alasan aku bertahan.  
+    <br><br>
+    I love you, Ayuni 💖  
+    <br><br>
+    <b>- Dari Wildan ❤️</b>
+    </p>
+</div>
+
+<script>
+function next(id){
+    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+/* LOVE FALL */
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*3+2)+"s";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),5000);
+}
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
